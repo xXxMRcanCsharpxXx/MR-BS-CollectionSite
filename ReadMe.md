@@ -21,7 +21,7 @@ We are going to create an API using ASP.Net Entity Framework that will handle ou
       - Read endpoint
       - Update endpoint
       - Delete endpoint
-   - All CRUD operations for songs
+   - All CRUD operations for songs (stretch task)
       - Create endpoint
       - Read endpoint
       - Update endpoint
@@ -31,8 +31,8 @@ We are going to create an API using ASP.Net Entity Framework that will handle ou
 ## Relationships
 Our user should be able to:
 - access albums from the artist that made them.
-- access songs from the album the song is on.
-- access reviews from the album the review is on.
+- access songs from the album the song is on. (This is a stretch task. The album should have a list of songs, but those songs don't need their own model unless you have the time to make it)
+- access reviews from the album the review is on. (stretch task)
 - interact with input fields for each entity
 
 Next we will create our interactive front-end. It should be an SPA (Single Page Application) that uses JS to build out components that our users can interact with. Use modular JS along with WebPack to create reusable components. This application should allow you to create new artists, albums and songs, edit details about each of the items after they have been created, and delete items.
@@ -54,10 +54,11 @@ Entities
    - artist
    - songs (either as a string to be separated, or see below)
    - record label
-- song
+- song (stretch task)
    - id
    - title
    - album
 
 ## Stretch Tasks
-Implement reviews, tied to each album, and implement all CRUD operations for them.
+Implement reviews, tied to each album, and implement all CRUD operations for them.  
+Implement the song stretch tasks mentioned above.
