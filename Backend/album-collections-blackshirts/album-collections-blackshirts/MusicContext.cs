@@ -23,8 +23,8 @@ namespace album_collections_blackshirts
                 new Artist() { Id = 2, Name = "System of a Down", Age = 28, Hometown = "Glendale, CA", RecordLabel = "American Recordings"  }
                 );
             modelBuilder.Entity<Album>().HasData(
-                new Album() { Id = 1, Title = "Donda 2", RecordLabel = "GOOD Music" },
-                new Album() { Id = 2, Title = "Hypnotize", RecordLabel = "American Recordings" }
+                new Album() { Id = 1, Title = "Donda 2", RecordLabel = "GOOD Music", ArtistId = 1 },
+                new Album() { Id = 2, Title = "Hypnotize", RecordLabel = "American Recordings", ArtistId = 2 }
                 );
            
             base.OnModelCreating(modelBuilder);

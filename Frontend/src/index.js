@@ -1,3 +1,5 @@
-import main from "./js/main"
+import main from "./js/main";
 
 main.setupMain();
+
+console.log("hello there")

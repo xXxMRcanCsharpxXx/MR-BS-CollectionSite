@@ -20,7 +20,7 @@ function displayAlbumIndex(album) {
                         ${al.recordLabel}
                     </h3>
                     <h3 id="artist">
-                        ${al.artist}
+                        ${al.artist.name}
                     </h3>
                     <button class="deleteButton" id="delete-${al.id}"> Delete </button>
                     <button class="editButton" id="edit-${al.id}"> Edit </button>
@@ -29,9 +29,11 @@ function displayAlbumIndex(album) {
             `
         }).join("")}
    </section> `;
+   setupAlbumIndex();
 }
 
 function setupAlbumIndex(){
+    console.log("hello")
     // grab create
     const create = document.getElementById("create");
     //create funtionality

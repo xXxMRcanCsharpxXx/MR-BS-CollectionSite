@@ -2,6 +2,7 @@
 import * as constants from "../componets/constants"
 import apiActions from "../api/api-actions"
 import artist from "../componets/artist"
+import album from "../componets/album"
 
 export default {
     setupMain
@@ -9,5 +10,6 @@ export default {
 
 
 function setupMain(){
-    apiActions.getRequest(constants.artistURL, artist.displayArtistIndex)
+    console.log("hello there")
+    apiActions.getRequest(constants.albumURL, album.displayAlbumIndex)
 }

@@ -4,7 +4,7 @@
 
 namespace album_collections_blackshirts.Migrations
 {
-    public partial class contextUpdate : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,7 +32,7 @@ namespace album_collections_blackshirts.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     RecordLabel = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ArtistId = table.Column<int>(type: "int", nullable: true)
+                    ArtistId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,26 +41,29 @@ namespace album_collections_blackshirts.Migrations
                         name: "FK_Albums_Artists_ArtistId",
                         column: x => x.ArtistId,
                         principalTable: "Artists",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.InsertData(
-                table: "Albums",
-                columns: new[] { "Id", "ArtistId", "RecordLabel", "Title" },
-                values: new object[,]
-                {
-                    { 1, null, "GOOD Music", "Donda 2" },
-                    { 2, null, "American Recordings", "Hypnotize" }
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
                 table: "Artists",
                 columns: new[] { "Id", "Age", "Hometown", "Name", "RecordLabel" },
-                values: new object[,]
-                {
-                    { 1, 45, "Chicago, IL", "Kanye West", "GOOD Music" },
-                    { 2, 28, "Glendale, CA", "System of a Down", "American Recordings" }
-                });
+                values: new object[] { 1, 45, "Chicago, IL", "Kanye West", "GOOD Music" });
+
+            migrationBuilder.InsertData(
+                table: "Artists",
+                columns: new[] { "Id", "Age", "Hometown", "Name", "RecordLabel" },
+                values: new object[] { 2, 28, "Glendale, CA", "System of a Down", "American Recordings" });
+
+            migrationBuilder.InsertData(
+                table: "Albums",
+                columns: new[] { "Id", "ArtistId", "RecordLabel", "Title" },
+                values: new object[] { 1, 1, "GOOD Music", "Donda 2" });
+
+            migrationBuilder.InsertData(
+                table: "Albums",
+                columns: new[] { "Id", "ArtistId", "RecordLabel", "Title" },
+                values: new object[] { 2, 2, "American Recordings", "Hypnotize" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Albums_ArtistId",

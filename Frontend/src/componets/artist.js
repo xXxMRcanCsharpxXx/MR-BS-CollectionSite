@@ -40,7 +40,7 @@ function setupArtistIndex(){
     // grab create
     const create = document.getElementById("create");
     //create funtionality
-    create.addEventListener("click", displayArtistIndex);
+    create.addEventListener("click", displayArtistCreate);
     // grab delete
     const deleteBtns = Array.from(document.getElementsByClassName("deleteButton"));
     //delete functionality
