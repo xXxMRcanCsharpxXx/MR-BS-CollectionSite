@@ -19,6 +19,9 @@ function displayAlbumIndex(album) {
                     <h3 id="recordLabel">
                         ${al.recordLabel}
                     </h3>
+                    <h3 id="artist">
+                        ${al.artist}
+                    </h3>
                     <button class="deleteButton" id="delete-${al.id}"> Delete </button>
                     <button class="editButton" id="edit-${al.id}"> Edit </button>
                     <button class="ArtistButton" id="gp-${al.id}"> Add Artist </button>
@@ -32,7 +35,7 @@ function setupAlbumIndex(){
     // grab create
     const create = document.getElementById("create");
     //create funtionality
-    create.addEventListener("click", displayAlbumIndex);
+    create.addEventListener("click", displayAlbumCreate);
     // grab delete
     const deleteBtns = Array.from(document.getElementsByClassName("deleteButton"));
     //delete functionality
@@ -83,6 +86,10 @@ function displayAlbumCreate() {
             Record Label:
         </h4>
         <input type="text" id="alRecordLabel">
+        <h4>
+            Artist:
+        </h4>
+        <input type="text" id="alArtist">
     </section>
     `;
 setupAlbumCreat();
@@ -100,10 +107,10 @@ function setupAlbumCreat(){
     submitBtn.addEventListener("click", () => {
         let newAl = {
             Title: document.getElementById("alTitle").value,
-            recordLabel: document.getElementById("alRecordLabel").value,
+            RecordLabel: document.getElementById("alRecordLabel").value,
             Artist: []
         }
-        console.log(newBg);
+        console.log(newAl);
         apiActions.postRequest(constants.albumURL, displayAlbumIndex, newAl);
     })
 }
@@ -123,6 +130,10 @@ function displayAlbumEdit(album) {
             Record Label:
         </h4>
         <input type="text" id="alRecordLabel">
+        <h4>
+            Artist:
+        </h4>
+        <input type="text" id="alArtist">
     </section>
     `;
         document.getElementById("alTitle").value = album.Title;
@@ -141,7 +152,7 @@ function setupAlbumEdit(){
     submitBtn.addEventListener("click", () => {
         let editedAl = {
             Title: document.getElementById("alTitle").value,
-            recordLabel: document.getElementById("alRecordLabel").value,
+            RecordLabel: document.getElementById("alRecordLabel").value,
             Artist: []
         }
         console.log(editedAl);
