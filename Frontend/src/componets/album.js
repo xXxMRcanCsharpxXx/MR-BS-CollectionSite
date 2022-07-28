@@ -75,7 +75,7 @@ function setupAlbumIndex(){
 
 function displayAlbumCreate() {
     constants.mainContent.innerHTML = `
-    <button id="backbutton"> Back </button>
+    <button id="backButton"> Back </button>
     <h1>
         Create
     </h1>
@@ -111,7 +111,7 @@ function setupAlbumCreate(){
         let newAl = {
             Title: document.getElementById("alTitle").value,
             RecordLabel: document.getElementById("alRecordLabel").value,
-            Artist: []
+            Artist: document.getElementById("alArtist").value,
         }
         console.log(newAl);
         apiActions.postRequest(constants.albumURL, displayAlbumIndex, newAl);
@@ -120,7 +120,7 @@ function setupAlbumCreate(){
 
 function displayAlbumEdit(album) {
     constants.mainContent.innerHTML = `
-    <button id="backbutton". Back </button>
+    <button id="backButton"> Back </button>
     <h1>
         Create
     </h1>
@@ -138,6 +138,7 @@ function displayAlbumEdit(album) {
         </h4>
         <input type="text" id="alArtist">
     </section>
+    <button ="sumitButton">Submit</button>
     `;
         document.getElementById("alTitle").value = album.Title;
     setupAlbumEdit();
