@@ -92,10 +92,10 @@ function displayAlbumCreate() {
         <input type="text" id="alArtist">
     </section>
     `;
-setupAlbumCreat();
+setupAlbumCreate();
 }
 
-function setupAlbumCreat(){
+function setupAlbumCreate(){
     // grab back button
     let backBtn = document.getElementById("backButton");
     //back button functionality
