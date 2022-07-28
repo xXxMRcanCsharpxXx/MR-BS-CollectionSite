@@ -75,24 +75,25 @@ function setupAlbumIndex(){
 
 function displayAlbumCreate() {
     constants.mainContent.innerHTML = `
-    <button id="backbutton". Back </button>
+    <button id="backbutton"> Back </button>
     <h1>
         Create
     </h1>
     <section id="createForm">
-        <h4>
-            Title:
-        </h4>
-        <input type="text" id="alTitle">
-        <h4>
-            Record Label:
-        </h4>
-        <input type="text" id="alRecordLabel">
-        <h4>
-            Artist:
-        </h4>
-        <input type="text" id="alArtist">
+    <h4>
+    Title:
+    </h4>
+    <input type="text" id="alTitle">
+    <h4>
+    Record Label:
+    </h4>
+    <input type="text" id="alRecordLabel">
+    <h4>
+    Artist:
+    </h4>
+    <input type="text" id="alArtist">
     </section>
+    <button id="submitButton">submit</button>
     `;
 setupAlbumCreate();
 }
