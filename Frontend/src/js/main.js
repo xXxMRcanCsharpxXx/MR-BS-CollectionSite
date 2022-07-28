@@ -10,6 +10,5 @@ export default {
 
 
 function setupMain(){
-    console.log("hello there")
     apiActions.getRequest(constants.albumURL, album.displayAlbumIndex)
 }

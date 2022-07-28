@@ -54,14 +54,14 @@ function postRequest(location, callback, requestBody){
     }
     fetch(location, settings)
     .then((response) => {
-        return response.json()
+        return response.json();
     })
     .then((data) => {
-        callback(data)
+        callback(data);
     })
     .catch((err) => {
-        console.log(err)
-    })
+        console.log(err);
+    });
 }
 
 function deleteRequest(location, callback){
