@@ -40,7 +40,7 @@ namespace album_collections_blackshirts.Controllers
 
         // Post (create)
         [HttpPost]
-        public ActionResult< IEnumerable<Album> > Post(Album album)
+        public ActionResult< IEnumerable<Album> > Post([FromBody]Album album)
         {
             
             if ( !AlbumExists(album.Title) ) 

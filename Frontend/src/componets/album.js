@@ -112,7 +112,8 @@ function setupAlbumCreate(){
         let newAl = {
             Title: document.getElementById("alTitle").value,
             RecordLabel: document.getElementById("alRecordLabel").value,
-            Artist: document.getElementById("alArtist").value,
+            // Artist: document.getElementById("alArtist").value,
+            ArtistId: 1
         }
         console.log(newAl);
         apiActions.postRequest(constants.albumURL, displayAlbumIndex, newAl);

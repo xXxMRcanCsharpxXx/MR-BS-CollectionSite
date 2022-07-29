@@ -8,5 +8,18 @@
         public string RecordLabel { get; set; }
         public virtual Artist Artist { get; set; }
         public int ArtistId { get; set; }
+
+        public Album(int id, string title, string recordLabel, int artistId)
+        {
+            Id = id;
+            Title = title;
+            RecordLabel = recordLabel;
+            ArtistId = artistId;
+        }
+
+        public Album()
+        {
+
+        }
     }
 }
