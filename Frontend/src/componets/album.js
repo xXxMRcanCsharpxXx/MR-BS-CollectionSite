@@ -2,6 +2,7 @@ import apiActions from "../api/api-actions";
 import * as constants from "../componets/constants";
 import artist from "../componets/artist";
 
+
 export default {
     displayAlbumIndex,
 }
@@ -22,7 +23,7 @@ function displayAlbumIndex(album) {
                     <h3 id="artist">
                         ${al.artist.name}
                     </h3>
-                    <button class="deleteButton" id="delete-${al.id}"> Delete </button>
+                    <button class="deleteButton" id="delete-${al.id}">${al.id} Delete </button>
                     <button class="editButton" id="edit-${al.id}"> Edit </button>
                     <button class="artistButton" id="gp-${al.id}"> Add Artist </button>
                 </div>
@@ -43,8 +44,7 @@ function setupAlbumIndex(){
     //delete functionality
     deleteBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            console.log("hello")
-            let id = btn.id.split("_")[1];
+            let id = btn.id.split("-")[1];
             apiActions.deleteRequest(constants.albumURL + id, displayAlbumIndex);
         });
     });
@@ -54,7 +54,7 @@ function setupAlbumIndex(){
     // edit functionality
     editBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            let id = btn.id.split("_")[1];
+            let id = btn.id.split("-")[1];
             apiActions.getRequest(constants.albumURL + id, displayAlbumEdit);
         });
     });
@@ -64,7 +64,7 @@ function setupAlbumIndex(){
     // add ar button functionality
     artistBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
-            let id = btn.id.split("_")[1];
+            let id = btn.id.split("-")[1];
             apiActions.getRequest(constants.artistURL, (artist) => {
                 console.log(artist);
                 artist.displayArtistCreate(artist, id);
@@ -124,7 +124,7 @@ function displayAlbumEdit(album) {
     constants.mainContent.innerHTML = `
     <button id="backButton"> Back </button>
     <h1>
-        Create
+        Edit
     </h1>
     <section id="createForm">
         <h4>
@@ -143,6 +143,8 @@ function displayAlbumEdit(album) {
     </section>
     `;
         document.getElementById("alTitle").value = album.Title;
+        document.getElementById("alRecordLabel").value = album.RecordLabel;
+        document.getElementById("alArtist").value = album.Artist;
     setupAlbumEdit();
 }
 
